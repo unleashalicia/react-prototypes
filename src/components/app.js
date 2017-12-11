@@ -9,7 +9,7 @@ const App = () => {
     return (
         <div className="container">
             <h1>Student Grade Table</h1>
-            <Table/>
+            <Table data={students}/>
         </div>
     );
 };

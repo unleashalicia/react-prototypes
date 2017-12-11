@@ -2,7 +2,21 @@ import React, {Component} from 'react';
 import App from './app';
 
 const Table = props => {
-        props.data //start mapping here.
+    const tableRows = props.data.map((value, index)  => (
+
+       <tr key={index}>
+           <td>
+               {value.name}
+           </td>
+           <td>
+               {value.course}
+           </td>
+           <td>
+               {value.grade}
+           </td>
+       </tr>
+        )
+    );
 
     return (
     <div>
@@ -15,21 +29,7 @@ const Table = props => {
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>Alicia</td>
-                <td>Math</td>
-                <td>90</td>
-            </tr>
-            <tr>
-                <td>Brian</td>
-                <td>Science</td>
-                <td>90</td>
-            </tr>
-            <tr>
-                <td>Lori</td>
-                <td>English</td>
-                <td>95</td>
-            </tr>
+                {tableRows}
             </tbody>
         </table>
     </div>)
