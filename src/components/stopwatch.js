@@ -13,6 +13,7 @@ class Stopwatch extends Component{
         this.stop = this.stop.bind(this);
         this.update = this.update.bind(this);
         this.reset = this.reset.bind(this);
+        this.save_time = this.save_time.bind(this);
     }
 
     start(){
@@ -52,6 +53,11 @@ class Stopwatch extends Component{
         })
     }
 
+    save_time(){
+        console.log(Time.state);
+
+    }
+
     render(){
         const {status, elapsed} = this.state;
         return (
@@ -63,6 +69,7 @@ class Stopwatch extends Component{
                     <button className="btn btn-outline-success mx-3" onClick={this.start}>Start</button>
                     <button className="btn btn-outline-danger mx-3" onClick={this.stop}>Stop</button>
                     <button className="btn btn-outline-warning mx-3" onClick={this.reset}>Reset</button>
+                    <button className="btn btn-outline-primary mx-3" onClick={this.save_time}>Save Time</button>
                 </p>
             </div>
         )
