@@ -1,10 +1,14 @@
 import React from 'react';
-import Stopwatch from './stopwatch';
+import Time from './format_time';
 
-const Stats = () => (
-    <div className="jumbotron">
-
-    </div>
-)
+const Stats = props => {
+    console.log('PROPS:', props);
+    return (
+        <div className="jumbotron">
+            <h1>Lap Times</h1>
+            <Time elapsed={props.laps}/>
+        </div>
+    )
+}
 
 export default Stats;

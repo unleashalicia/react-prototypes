@@ -1,0 +1,21 @@
+body {
+    background-color: lightgrey;
+}
+
+.container-box {
+    background-image: url('./images/sky.jpg');
+    border: 3px solid black;
+}
+
+.btn {
+    background-color: black;
+}
+
+.cursive {
+    font-family: cursive;
+    font-size: 72px;
+}
+
+.black-box {
+    background-color: black;
+}

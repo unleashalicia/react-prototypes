@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Time from './format_time';
+import Stats from './stats';
 
 class Stopwatch extends Component{
     constructor(props){
@@ -7,7 +8,8 @@ class Stopwatch extends Component{
         this.state = {
             status: 'stopped',
             start: null,
-            elapsed: 0
+            elapsed: 0,
+            lapTimesArr: [0]
         }
         this.start = this.start.bind(this);
         this.stop = this.stop.bind(this);
@@ -54,14 +56,17 @@ class Stopwatch extends Component{
     }
 
     save_time(){
-        console.log(Time.state);
-
+        const bestLapsArr = this.state.lapTimesArr;
+        bestLapsArr.push(this.state.elapsed);
+        this.setState({
+            lapTimesArr: bestLapsArr
+        })
     }
 
     render(){
         const {status, elapsed} = this.state;
         return (
-            <div className="jumbotron">
+            <div className="jumbotron container-box">
                 <h1 className="display-3"><Time elapsed={elapsed}/></h1>
                 <hr className="my-3"/>
                 <p className="lead text-center">{status}</p>
@@ -71,6 +76,8 @@ class Stopwatch extends Component{
                     <button className="btn btn-outline-warning mx-3" onClick={this.reset}>Reset</button>
                     <button className="btn btn-outline-primary mx-3" onClick={this.save_time}>Save Time</button>
                 </p>
+                {/*<div>{this.state.lapTimesArr}</div>*/}
+                {this.state.lapTimesArr.map(time => <Stats laps={time}/>)}
             </div>
         )
     }
