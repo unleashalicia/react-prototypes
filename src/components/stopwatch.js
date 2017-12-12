@@ -66,18 +66,22 @@ class Stopwatch extends Component{
     render(){
         const {status, elapsed} = this.state;
         return (
-            <div className="jumbotron container-box">
-                <h1 className="display-3"><Time elapsed={elapsed}/></h1>
-                <hr className="my-3"/>
-                <p className="lead text-center">{status}</p>
-                <p className="text-center">
-                    <button className="btn btn-outline-success mx-3" onClick={this.start}>Start</button>
-                    <button className="btn btn-outline-danger mx-3" onClick={this.stop}>Stop</button>
-                    <button className="btn btn-outline-warning mx-3" onClick={this.reset}>Reset</button>
-                    <button className="btn btn-outline-primary mx-3" onClick={this.save_time}>Save Time</button>
-                </p>
-                {/*<div>{this.state.lapTimesArr}</div>*/}
-                {this.state.lapTimesArr.map(time => <Stats laps={time}/>)}
+            <div>
+                <div className="jumbotron container-box">
+                    <h1 className="display-3"><Time elapsed={elapsed}/></h1>
+                    <hr className="my-3"/>
+                    <p className="lead text-center">{status}</p>
+                    <p className="text-center">
+                        <button className="btn btn-outline-success mx-3" onClick={this.start}>Start</button>
+                        <button className="btn btn-outline-danger mx-3" onClick={this.stop}>Stop</button>
+                        <button className="btn btn-outline-warning mx-3" onClick={this.reset}>Reset</button>
+                        <button className="btn btn-outline-primary mx-3" onClick={this.save_time}>Save Time</button>
+                    </p>
+                </div>
+                <h1 className="text-center cursive">Lap Times</h1>
+                <div className="jumbotron laps">
+                    {this.state.lapTimesArr.map(time => <Stats laps={time}/>)}
+                </div>
             </div>
         )
     }

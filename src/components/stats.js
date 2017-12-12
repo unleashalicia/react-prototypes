@@ -2,11 +2,14 @@ import React from 'react';
 import Time from './format_time';
 
 const Stats = props => {
-    console.log('PROPS:', props);
+    // let num = 0;
+    // num++;
     return (
-        <div className="jumbotron">
-            <h1>Lap Times</h1>
-            <Time elapsed={props.laps}/>
+        <div>
+            <h2 className="text-center">
+                {/*{num}*/}
+                <Time className="text-center" elapsed={props.laps}/>
+            </h2>
         </div>
     )
 }
