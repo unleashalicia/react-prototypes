@@ -28,6 +28,7 @@ class ContactForm extends Component {
     }
 
     handleSubmit(event){
+        debugger;
         event.preventDefault();
         console.log(this.state.form);
         this.props.add(this.state.form);
@@ -54,7 +55,7 @@ class ContactForm extends Component {
                 <Field name="phone" label="Phone" type="text" value={phone} onChange={this.handleInputChange}/>
                 <Field name="email" label="Email" type="text" value={email} onChange={this.handleInputChange}/>
                 <div>
-                    <button className="btn btn-success btn-sm">Add Contact</button>
+                    <button className="btn btn-success btn-sm mr-4">Add Contact</button>
                     <button className="btn btn-danger btn-sm" type="button" onClick={this.reset}>Clear From</button>
                 </div>
             </form>
