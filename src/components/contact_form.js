@@ -53,8 +53,10 @@ class ContactForm extends Component {
                 <Field name="lastName" label="Last Name" type="text" value={lastName} onChange={this.handleInputChange}/>
                 <Field name="phone" label="Phone" type="text" value={phone} onChange={this.handleInputChange}/>
                 <Field name="email" label="Email" type="text" value={email} onChange={this.handleInputChange}/>
-                <button>Add Contact</button>
-                <button type="button" onClick={this.reset}>Clear From</button>
+                <div>
+                    <button className="btn btn-success btn-sm">Add Contact</button>
+                    <button className="btn btn-danger btn-sm" type="button" onClick={this.reset}>Clear From</button>
+                </div>
             </form>
         )
     }

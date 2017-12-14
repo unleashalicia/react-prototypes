@@ -5,7 +5,7 @@ const ContactCard =  props => {
     return (
         <div className="col-6 my-3">
             <div className="card">
-                <div className="card-header">
+                <div className="card-header blue">
                     {lastName}
                 </div>
                 <div className="card-block">
